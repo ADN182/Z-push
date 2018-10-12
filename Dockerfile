@@ -8,7 +8,7 @@ RUN mkdir /home/z-push-git && \
     chown -R nginx:nginx /var/log/z-push/ /var/lib/z-push/ 
     
 RUN 	apk update && \
-	apk add php5 php5-imap php5-fpm php5-posix php5-pdo git && \
+	apk add php5 php5-imap php5-fpm php5-posix php5-pdo php5-openssl php5-curl git && \
   	echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && \

@@ -1,5 +1,7 @@
 FROM nginx:alpine
 
+WORKDIR /usr/share/nginx
+ADD start.sh .
 
 RUN mkdir /home/z-push-git && \
     mkdir -p /usr/share/z-push/ /var/log/z-push/ /var/lib/z-push/ /home/z-push-git && \
@@ -22,5 +24,6 @@ RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && 
 
 
 ADD start.sh	/usr/share/z-push/
+ADD default.conf /etc/nginx/conf.d/
 
-CMD "./usr/share/z-push/start.sh"
+CMD "./start.sh"

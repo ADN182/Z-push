@@ -1,7 +1,6 @@
 FROM nginx:alpine
 
-WORKDIR /usr/share/nginx
-ADD start.sh .
+
 
 RUN mkdir /home/z-push-git && \
     mkdir -p /usr/share/z-push/ /var/log/z-push/ /var/lib/z-push/ /home/z-push-git && \
@@ -20,6 +19,10 @@ RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && 
       ln -s /usr/share/z-push/z-push-admin.php /usr/sbin/z-push-admin && \
       ln -s /usr/share/z-push/z-push-top.php /usr/sbin/z-push-top && \
       apk del git && \
-      rm -rf /var/cache/apk/* && \
-      
+      rm -rf /var/cache/apk/*
+
+WORKDIR /usr/share/z-push
+
+ADD start.sh .
+
 CMD "./start.sh"

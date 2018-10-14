@@ -16,8 +16,8 @@ RUN 	apk update && \
   	echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && \
-      cp /home/z-push-git/src/* /usr/share/z-push/ && \
-      cp /home/z-push-git/config/nginx/z-push.conf /etc/nginx/conf.d/ && \
+      cp -r /home/z-push-git/src/* /usr/share/z-push/ && \
+      cp -r /home/z-push-git/config/nginx/z-push.conf /etc/nginx/conf.d/ && \
       rm /etc/nginx/conf.d/default.conf && \
       ln -s /usr/share/z-push/z-push-admin.php /usr/sbin/z-push-admin && \
       ln -s /usr/share/z-push/z-push-top.php /usr/sbin/z-push-top && \

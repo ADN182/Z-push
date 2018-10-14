@@ -20,8 +20,7 @@ RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && 
       apk del git && \
       rm -rf /var/cache/apk/* && \
 
-WORKDIR /usr/share/z-push/
 
-ADD start.sh	/usr/share/z-push
+ADD start.sh	/usr/share/z-push/
 
-CMD "./start.sh"
+CMD "./usr/share/z-push/start.sh"

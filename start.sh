@@ -31,5 +31,5 @@ then
     cp /home/z-push-git/src/backend/combined/config.php /usr/share/z-push/backend/combined/config.php
 fi
 
-php5-fpm
+php-fpm5
 nginx

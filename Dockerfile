@@ -14,12 +14,13 @@ RUN 	apk update && \
 RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && \
       mv /home/z-push-git/src/* /usr/share/z-push/ && \
       mv /home/z-push-git/config/nginx/z-push.conf /etc/nginx/conf.d/ && \
+      rm /etc/nginx/conf.d/default.conf
       ln -s /usr/share/z-push/z-push-admin.php /usr/sbin/z-push-admin && \
       ln -s /usr/share/z-push/z-push-top.php /usr/sbin/z-push-top && \
       apk del git && \
       rm -rf /var/cache/apk/* && \
 
-WORKDIR /usr/share/z-push
+WORKDIR /usr/share/z-push/
 
 ADD start.sh	/usr/share/z-push
 

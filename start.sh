@@ -2,7 +2,7 @@
 
 if [ ! -f "/etc/ngnix/conf.d/z-push.conf" ]
 then
-    cp /home/z-push-git/build/ /etc/nginx/conf.d/z-push.conf
+    cp  /home/z-push-git/config/nginx/z-push.conf /etc/nginx/conf.d/z-push.conf
 fi
 
 if [ ! -f "/usr/share/z-push/config.php" ]

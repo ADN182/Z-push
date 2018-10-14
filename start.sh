@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -f "/etc/ngnix/conf.d/z-push.conf" ]
+if [ ! -f "/etc/nginx/conf.d/z-push.conf" ]
 then
     cp  /home/z-push-git/config/nginx/z-push.conf /etc/nginx/conf.d/z-push.conf
 fi

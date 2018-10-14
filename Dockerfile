@@ -21,9 +21,5 @@ RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && 
       ln -s /usr/share/z-push/z-push-top.php /usr/sbin/z-push-top && \
       apk del git && \
       rm -rf /var/cache/apk/* && \
-
-
-ADD start.sh	/usr/share/z-push/
-ADD default.conf /etc/nginx/conf.d/
-
+      
 CMD "./start.sh"

@@ -5,11 +5,11 @@ WORKDIR /usr/share/z-push
 ADD start.sh .
 
 RUN mkdir /home/z-push-git && \
-	mkdir -p /usr/share/z-push/ /var/log/z-push/ /var/lib/z-push/ /home/z-push-git && \
-	chmod 775 /var/log/z-push/ /var/lib/z-push/ && \
+	mkdir -p /usr/share/z-push/ /usr/share/z-push/state/ /var/log/z-push/ /var/lib/z-push/ /home/z-push-git && \
+	chmod 775 /var/log/z-push/ /var/lib/z-push/ /usr/share/z-push/state/ && \
 	chown -R nginx: /usr/share/z-push/ && \
 	chmod +x start.sh  && \
-	chown -R nginx:nobody /var/log/z-push/ /var/lib/z-push/  && \
+	chown -R nginx:nobody /var/log/z-push/ /var/lib/z-push/ /usr/share/z-push/state/  && \
 	
 	apk update  && \
 	apk add php7 php7-cli php7-imap php7-fpm php7-posix php7-pdo php7-openssl php7-curl php7-pcntl git && \

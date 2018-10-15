@@ -13,6 +13,11 @@ RUN mkdir /home/z-push-git && \
     
 RUN 	apk update && \
 	apk add php5 php5-imap php5-fpm php5-posix php5-pdo php5-openssl php5-curl git && \
+	echo "; z-push configuration" >> /etc/php/php-fpm.conf
+	echo "php_flag[magic_quotes_gpci] = off" >> /etc/php/php-fpm.conf
+	echo "php_flag[register_globals] = off" >> /etc/php/php-fpm.conf
+	echo "php_flag[magic_quotes_runtime] = off" >> /etc/php/php-fpm.conf
+	echo "php_flag[short_open_tag] = on" >> /etc/php/php-fpm.conf
   	echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git && \

@@ -20,7 +20,7 @@ RUN mkdir /home/z-push-git \
 	echo "php_flag[magic_quotes_runtime] = off" >> /etc/php/php-fpm.conf \
 	echo "php_flag[short_open_tag] = on" >> /etc/php/php-fpm.conf \
   	echo "daemon off;" >> /etc/nginx/nginx.conf \
-	sed -i "s/#gzip  on;/server_tokens off;/" /etc/nginx/nginx.conf
+	sed -i "s/#gzip  on;/server_tokens off;/" /etc/nginx/nginx.conf \
 
 	git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git  \
 	cp -r /home/z-push-git/src/* /usr/share/z-push/  \

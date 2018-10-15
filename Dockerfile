@@ -12,13 +12,13 @@ RUN mkdir /home/z-push-git && \
 	chown -R nginx:nobody /var/log/z-push/ /var/lib/z-push/  && \
 	
 	apk update  && \
-	apk add php5 php5-cli php5-imap php5-fpm php5-posix php5-pdo php5-openssl php5-curl git && \
-	sed -i "s/expose_php = On/expose_php = Off/" /etc/php5/php.ini  && \
-	echo "; z-push configuration" >> /etc/php5/php-fpm.conf   && \
-	echo "php_flag[magic_quotes_gpci] = off" >> /etc/php5/php-fpm.conf   && \
-	echo "php_flag[register_globals] = off" >> /etc/php5/php-fpm.conf  && \
-	echo "php_flag[magic_quotes_runtime] = off" >> /etc/php5/php-fpm.conf && \
-	echo "php_flag[short_open_tag] = on" >> /etc/php5/php-fpm.conf && \
+	apk add php7 php7-cli php7-imap php7-fpm php7-posix php7-pdo php7-openssl php7-curl git && \
+	sed -i "s/expose_php = On/expose_php = Off/" /etc/php7/php.ini  && \
+	echo "; z-push configuration" >> /etc/php7/php-fpm.conf   && \
+	echo "php_flag[magic_quotes_gpci] = off" >> /etc/php7/php-fpm.conf   && \
+	echo "php_flag[register_globals] = off" >> /etc/php7/php-fpm.conf  && \
+	echo "php_flag[magic_quotes_runtime] = off" >> /etc/php7/php-fpm.conf && \
+	echo "php_flag[short_open_tag] = on" >> /etc/php7/php-fpm.conf && \
   	echo "daemon off;" >> /etc/nginx/nginx.conf  && \
 	sed -i "s/#gzip  on;/server_tokens off;/" /etc/nginx/nginx.conf && \
 

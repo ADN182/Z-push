@@ -32,9 +32,7 @@ RUN mkdir /home/z-push-git && \
 	ln -s /usr/share/z-push/z-push-admin.php /usr/sbin/z-push-admin  && \
 	ln -s /usr/share/z-push/z-push-top.php /usr/sbin/z-push-top   && \
 	apk del git   && \
-	rm -rf /var/cache/apk/* && \ 
-	ln -sf /proc/1/fd/1 /var/log/z-push/z-push.log && \
-	ln -sf /proc/1/fd/2 /var/log/z-push/z-push-error.log
+	rm -rf /var/cache/apk/*
 
 
 

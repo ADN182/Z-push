@@ -12,7 +12,7 @@ RUN mkdir /home/z-push-git && \
 	chown -R nginx:nobody /var/log/z-push/ /var/lib/z-push/ /usr/share/z-push/state/  && \
 	
 	apk update  && \
-	apk add php7 php7-cli php7-imap php7-fpm php7-posix php7-pdo php7-openssl php7-curl php7-sysvsem php7-sysvshm php7-pcntl php7-simplexml php7-xmlwriter php7-mbstring php7-xml php7-iconv php7-xsl git && \
+	apk add php7 php7-cli php7-imap php7-fpm php7-posix php7-pdo php7-openssl php7-curl php7-sysvsem php7-sockets php7-sysvshm php7-pcntl php7-simplexml php7-xmlwriter php7-mbstring php7-xml php7-iconv php7-xsl git && \
 	sed -i "s/expose_php = On/expose_php = Off/" /etc/php7/php.ini  && \
 	echo "; z-push configuration" >> /etc/php7/php-fpm.conf   && \
 	echo "php_flag[magic_quotes_gpci] = off" >> /etc/php7/php-fpm.conf   && \

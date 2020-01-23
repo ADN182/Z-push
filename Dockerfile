@@ -34,7 +34,4 @@ RUN mkdir /home/z-push-git && \
 	apk del git   && \
 	rm -rf /var/cache/apk/*
 
-
-
-
 CMD "./start.sh"

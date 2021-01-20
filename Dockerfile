@@ -22,7 +22,7 @@ RUN mkdir /home/z-push-git && \
   	echo "daemon off;" >> /etc/nginx/nginx.conf  && \
 	sed -i "s/#gzip  on;/server_tokens off;/" /etc/nginx/nginx.conf && \
 
-	git clone -b master https://github.com/Z-Hub/Z-Push.git /home/z-push-git  && \
+	git clone -b 2.6.1 https://github.com/Z-Hub/Z-Push.git /home/z-push-git  && \
 	git clone https://gitlab.com/davical-project/awl /home/awl && \
 	mv /home/awl/inc/* /usr/share/awl/inc/ && \
 	rm -rf /home/awl && \
